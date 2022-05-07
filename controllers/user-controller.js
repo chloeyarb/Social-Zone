@@ -5,6 +5,12 @@ const userController = {
     // find method for all users
     getAllUsers(req, res) {
         User.find({})
+        .populate({
+            path: 'thoughts',
+            select: '-__v'
+        })
+        .select('-__v')
+        .sort({ _id: -1 })
         .then(userData => res.json(userData))
         .catch(err => {
             console.log(err);
@@ -14,6 +20,11 @@ const userController = {
     // find method for one user. destructured the params
     getSingleUser({ params }, res) {
         User.findOne({ _id: params.id })
+        .populate({
+            path: 'thoughts',
+            select: '-__v'
+        })
+        .select('-__v')
         .then(userData => {
             if (!userData) {
                 res.status(404).json({ message: 'No user found with this id.'});
