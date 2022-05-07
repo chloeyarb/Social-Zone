@@ -27,7 +27,7 @@ const userController = {
         .select('-__v')
         .then(userData => {
             if (!userData) {
-                res.status(404).json({ message: 'No user found with this id.'});
+                res.status(404).json({ message: 'No user found.'});
                 return;
             }
             res.json(userData);
@@ -43,12 +43,28 @@ const userController = {
         .then(userData => res.json(userData))
         .catch(err => res.status(400).json(err));
     },
+    // add friends
+    addFriends({ params }, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId },
+            { $push: { friends: params.friendsId } },
+            { new: true }
+        )
+        .then(userData => {
+            if (!userData) {
+                res.status(404).json({ message: 'No user found.'});
+                return;
+            }
+            res.json(userData)
+        })
+        .catch(err => res.json(err));
+    },
     // method to update user
     updateUser({ params, body }, res) {
         User.findOneAndUpdate({ _id: params.id }, body, {new: true})
         .then(userData => {
             if (!userData) {
-                res.status(404).json({ message: 'No user found with this id.'});
+                res.status(404).json({ message: 'No user found.'});
                 return;
             }
             res.json(userData);
@@ -60,7 +76,23 @@ const userController = {
         User.findOneAndDelete({ _id: params.id })
         .then(userData => {
             if (!userData) {
-                res.status(404).json({ message: 'No user found with this id.'});
+                res.status(404).json({ message: 'No user found.'});
+                return;
+            }
+            res.json(userData);
+        })
+        .catch(err => res.status(400).json(err));
+    },
+    // delete friend
+    deleteFriends({ params }, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId },
+            { $pull: { friends: params.friendsId} },
+            { new: true }
+        )
+        .then(userData => {
+            if (!userData) {
+                res.status(404).json({ message: 'No user found.'});
                 return;
             }
             res.json(userData);
