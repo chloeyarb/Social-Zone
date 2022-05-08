@@ -43,9 +43,16 @@ Start server
 
 ## Video Walkthrough
 
-[SocialZone Video](https://evening-tor-85614.herokuapp.com/).
+* [SocialZone User Routes](https://youtu.be/O3PppGcWqJ4)
+* [SocialZone Friend Routes](https://youtu.be/bGFVM1oSG1Y)
+* [SocialZone Thought Routes](https://youtu.be/C7L5cruajYE)
+* [SocialZone Reaction Routes](https://youtu.be/nbRIdVTsy4k)
 
 <img width=800px height=375px src="./assets/All-Users.png" alt="homepage screenshot"></img>
+
+## GitHub Repository
+
+[SocialZone Repo](https://github.com/chloeyarb/Social-Zone)
 
 ## Contributor
 
