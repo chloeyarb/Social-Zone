@@ -9,16 +9,16 @@
 ## Table of Contents
 
 * [Description](#description)
-* [BuiltWith](#builtwith)
+* [BuiltWith](#built-with)
 * [Installation](#installation)
-* [Video Walkthrough](#videowalthrough)
+* [Video Walkthrough](#video-walkthrough)
 * [Contributor](#contributor)
 
 ## Description
 
 SocialZone is a social network API that allows users to share thoughts, have friend lists, and react to thoughts. This back end applications takes unstructured data to the next level with it's use of MongoDB 
-for the database and Mongoose ODM, which is an object data modeling library.  
-Let's get social!
+for the database and Mongoose ODM, which is an object data modeling library. This application uses the Mongoose built in methods for CRUD operations to be able to create, update, and delete users, thoughts, friends,
+and reactions. Let's get social!
 
 ## Built With
 
@@ -45,9 +45,7 @@ Start server
 
 [SocialZone Video](https://evening-tor-85614.herokuapp.com/).
 
-<img width=375px height=250px src="./public/images/Homepage.png" alt="homepage screenshot"></img>
-
-<img width=375px height=250px src="./public/images/Genre.png" alt="genre page screenshot"></img>
+<img width=800px height=375px src="./assets/All-Users.png" alt="homepage screenshot"></img>
 
 ## Contributor
 
